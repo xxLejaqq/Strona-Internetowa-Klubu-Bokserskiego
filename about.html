@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O nas – THEE GYM LUBLIN</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="about-container">
+    <div class="about-row fade-in-left">
+      <div class="about-image">
+        <img src="images/emil-1.jpeg" alt="Emil">
+      </div>
+      <div class="about-text">
+        <p>
+          Cześć, mam na imię Emil. Jestem Polakiem, ale przez 20 lat mieszkałem w Stanach Zjednoczonych. Kiedy rozeznawałem swój powrót do Polski, szukałem kierownictwa duchowego u ks. Antoniego Mastroianniego, wybitnego uczonego, który doradził mi, abym studiował filozofię na Katolickim Uniwersytecie Lubelskim oraz organizował letnie obozy łączące formację sportową i duchową.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-row reverse fade-in-right">
+      <div class="about-image">
+        <img src="images/emil-2.jpeg" alt="Studia">
+      </div>
+      <div class="about-text">
+        <p>
+          Za jego błogosławieństwem wróciłem do Polski z konkretnym planem. Ukończyłem studia w Nowym Jorku oraz Pensylwanii, dlatego naturalnym wyborem był dla mnie KUL i programy filozoficzne w języku angielskim. Te studia są naprawdę przemieniające życie – pogłębiają rozumienie rzeczywistości w sposób, który realnie zmienia człowieka.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-row fade-in-left">
+      <div class="about-image">
+        <img src="images/emil-3.jpeg" alt="Pasja boks">
+      </div>
+      <div class="about-text">
+        <p>
+          Moją wielką pasją, którą przywiozłem zza oceanu, jest boks. To właśnie w USA kształtowałem swój charakter na ringu, ucząc się, że boks to nie tylko walka fizyczna, ale przede wszystkim dyscyplina ducha, pokora i panowanie nad własnymi słabościami. W boksie, podobnie jak w filozofii, szukamy prawdy o sobie i przesuwamy granice swoich możliwości.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-row reverse fade-in-right">
+      <div class="about-image">
+        <img src="images/emil-4.jpeg" alt="Thee Gym">
+      </div>
+      <div class="about-text">
+        <p>
+          Dlatego z ogromną radością zapraszam do odwiedzenia Thee Gym. Obiekt, który założyłem w pobliżu uniwersytetu, ma wspierać zarówno rozwój fizyczny, jak i duchowy, tak jak zachęcał do tego św. Jan Paweł II. To miejsce, gdzie poprzez trening bokserski budujemy nie tylko silne ciało, ale i silny charakter. Zachęcam do kontaktu, jeśli macie jakiekolwiek pytania!
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+
+  <script>
+    const observerOptions = {
+      root: null,
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, observerOptions);
+
+
+    document.querySelectorAll('.about-row').forEach((row) => {
+      observer.observe(row);
+    });
+  </script>
+
+</body>
+</html>

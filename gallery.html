@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria – THEE GYM LUBLIN</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="slider-section">
+      <h2>Galeria THEE GYM</h2>
+      <div class="slider-container">
+        <div class="slide"><video muted loop playsinline autoplay><source src="images/videogaleria1.mp4" type="video/mp4"></video></div>
+        <div class="slide"><img src="images/imggaleria1.jpeg" alt="Galeria zdjęcie 1"></div>
+        <div class="slide"><video muted loop playsinline autoplay><source src="images/videogaleria2.mp4" type="video/mp4"></video></div>
+        <div class="slide"><img src="images/imggaleria2.jpeg" alt="Galeria zdjęcie 2"></div>
+        <div class="slide"><video muted loop playsinline autoplay><source src="images/videogaleria3.mp4" type="video/mp4"></video></div>
+        <div class="slide"><img src="images/imggaleria3.jpeg" alt="Galeria zdjęcie 3"></div>
+
+        <button class="prev" aria-label="Poprzedni slajd">❮</button>
+        <button class="next" aria-label="Następny slajd">❯</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+
+  <script>
+    // Upewniamy się, że skrypt uruchomi się dopiero po załadowaniu DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slide');
+        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.prev');
+        let currentIndex = 0;
+
+        if (slides.length === 0) return; // Zabezpieczenie przed brakiem slajdów
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                // Czyścimy wszystkie klasy pozycjonujące
+                slide.classList.remove('active', 'prev-slide', 'next-slide');
+                
+                if (index === currentIndex) {
+                    slide.classList.add('active');
+                } else if (index === (currentIndex - 1 + slides.length) % slides.length) {
+                    slide.classList.add('prev-slide');
+                } else if (index === (currentIndex + 1) % slides.length) {
+                    slide.classList.add('next-slide');
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlides();
+        });
+
+        prevBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlides();
+        });
+
+        // Inicjalizacja pierwszego widoku
+        updateSlides();
+    });
+  </script>
+
+</body>
+</html>

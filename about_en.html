@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – THEE GYM LUBLIN</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="about-container">
+    <div class="about-row fade-in-left">
+      <div class="about-image">
+        <img src="images/emil-1.jpeg" alt="Emil - Founder of Thee Gym">
+      </div>
+      <div class="about-text">
+        <p>
+          Hi, my name is Emil. I am Polish, but I lived in the United States for 20 years. When I was considering my return to Poland, I sought spiritual guidance from Fr. Anthony Mastroianni, a distinguished scholar. He advised me to study philosophy at the Catholic University of Lublin (KUL) and to organize summer camps that combine athletic and spiritual formation.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-row reverse fade-in-right">
+      <div class="about-image">
+        <img src="images/emil-2.jpeg" alt="Studies and Philosophy">
+      </div>
+      <div class="about-text">
+        <p>
+          With his blessing, I returned to Poland with a concrete plan. Having completed my previous studies in New York and Pennsylvania, KUL's philosophy programs in English were a natural choice for me. These studies are truly life-transforming – they deepen one's understanding of reality in a way that profoundly changes a person.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-row fade-in-left">
+      <div class="about-image">
+        <img src="images/emil-3.jpeg" alt="Boxing Passion">
+      </div>
+      <div class="about-text">
+        <p>
+          The great passion I brought with me from across the ocean is boxing. It was in the USA that I shaped my character in the ring, learning that boxing is not just a physical fight, but above all a discipline of the spirit, requiring humility and mastery over one's own weaknesses. In boxing, much like in philosophy, we seek the truth about ourselves and push the boundaries of our capabilities.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-row reverse fade-in-right">
+      <div class="about-image">
+        <img src="images/emil-4.jpeg" alt="Thee Gym Facility">
+      </div>
+      <div class="about-text">
+        <p>
+          It is therefore with great joy that I invite you to visit Thee Gym. The facility I founded near the university is meant to support both physical and spiritual development, as encouraged by St. John Paul II. It is a place where, through boxing training, we build not only a strong body but also a strong character. Feel free to reach out if you have any questions!
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+
+  <script>
+    const observerOptions = {
+      root: null,
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.about-row').forEach((row) => {
+      observer.observe(row);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | THEE GYM LUBLIN</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <div id="header-placeholder"></div>
+ 
+  <main>
+    <section>
+      <h2>Contact</h2>
+      <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+        <p style="margin-bottom: 20px;">
+          We train in the very heart of the city. Use the map below to find the fastest route to our club. 
+          We are waiting for you with professional equipment and a true boxing atmosphere. 
+          Have doubts about your first training session? Fill out the contact form below the map – 
+          we will answer every question to help you start your boxing adventure.
+        </p>
+      </div> 
+    </section>
+ 
+    <section class="map">
+      <h2>Where to find us?</h2>
+      <iframe
+        src="https://www.google.com/maps?q=Thee+Gym+Lublin&output=embed"
+        height="400"
+        style="border:0; border-radius: 12px; width: 100%;" 
+        allowfullscreen
+        loading="lazy">
+      </iframe> 
+    </section>
+ 
+    <section class="contact-form">
+      <h2>Contact Form</h2>
+      
+      <form action="https://formspree.io/f/mreezawg" method="POST">
+        
+        <div class="form-group">
+          <label for="name">First Name <span class="required">*</span></label>
+          <input type="text" id="name" name="First_Name" placeholder="Enter your first name" required>
+        </div>
+ 
+        <div class="form-group">
+          <label for="surname">Last Name</label>
+          <input type="text" id="surname" name="Last_Name" placeholder="Enter your last name">
+        </div>
+ 
+        <div class="form-group">
+          <label for="email">E-mail Address <span class="required">*</span></label>
+          <input type="email" id="email" name="Email" placeholder="e.g. contact@email.com" required>
+        </div>
+ 
+        <div class="form-group">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" name="Message" rows="5" placeholder="Write your message..." required></textarea>
+        </div>
+ 
+        <div class="checkbox-group">
+            <input type="checkbox" id="rodo" name="GDPR_Consent" value="Accepted" required>
+            <div class="consent-text-wrapper">
+                <label for="rodo">
+                    I consent to the processing of my personal data by 
+                    <strong>Thee Gym Lublin</strong> for the purpose of handling my inquiry.
+                </label>
+                <span class="required-info">* required field</span>
+            </div>
+        </div>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+ 
+  <div id="footer-placeholder"></div>
+ 
+  <script src="components.js"></script>
+ 
+</body>
+</html>
