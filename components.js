@@ -84,7 +84,7 @@
                             <ul class="footer-hours">
                                 <li>${lang === 'en' ? 'Monday - Saturday' : 'Poniedziałek - Sobota'}: 7:00 – 22:00</li>
                                 <li>${lang === 'en' ? 'Sunday' : 'Niedziela'}: ${lang === 'en' ? 'Closed' : 'Nieczynne'}</li>
-                                <li>${lang === 'en' ? 'Sunday' : 'Niedziela'}: ${lang === 'en' ? 'Closed' : 'Nieczynne'}</li>
+                                <li></li>
                             </ul>
                         </div>
                         <div class="footer-column">
