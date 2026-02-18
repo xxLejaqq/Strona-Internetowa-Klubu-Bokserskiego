@@ -82,11 +82,12 @@
                         </div>
                         <div class="footer-column">
                             <h3>${lang === 'en' ? 'Opening Hours' : 'Godziny Pracy'}</h3>
+                            <div class="footer-column">
+                            <h3>${lang === 'en' ? 'Opening Hours' : 'Godziny Pracy'}</h3>
                             <div class="footer-line"></div>
                             <ul class="footer-hours">
-                                <li>${lang === 'en' ? 'Monday - Thursday' : 'Poniedziałek - Czwartek'}: 17:00 – 21:00</li>
-                                <li>${lang === 'en' ? 'Friday' : 'Piątek'}: 08:00 – 11:00 | 17:00 – 21:00</li>
-                                <li>${lang === 'en' ? 'Saturday - Sunday' : 'Sobota - Niedziela'}: ${lang === 'en' ? 'Closed' : 'Nieczynne'}</li>
+                                <li>${lang === 'en' ? 'Monday - Saturday' : 'Poniedziałek - Sobota'}: 7:00 – 22:00</li>
+                                <li>${lang === 'en' ? 'Sunday' : 'Niedziela'}: ${lang === 'en' ? 'Closed' : 'Nieczynne'}</li>
                             </ul>
                         </div>
                         <div class="footer-column">
@@ -167,5 +168,6 @@
             }
         }
     });
+
 
 })();
