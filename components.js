@@ -1,15 +1,13 @@
 /* jshint esversion: 6 */
 
 (function() {
-    // 1. NATYCHMIASTOWE WYKRYWANIE JĘZYKA I STRONY
+    // 1. WYKRYWANIE JĘZYKA I STRONY
     const path = window.location.pathname;
     const page = path.split("/").pop() || "index.html";
     
-    // Sprawdzamy czy w nazwie pliku jest _en.html
     const isEn = page.toLowerCase().indexOf('_en.html') !== -1;
     const lang = isEn ? 'en' : 'pl';
 
-    // Ustalamy linki dla flag (przełączanie między odpowiednikami)
     const plTarget = isEn ? page.replace('_en.html', '.html') : page;
     const enTarget = isEn ? page : page.replace('.html', '_en.html');
 
@@ -82,12 +80,11 @@
                         </div>
                         <div class="footer-column">
                             <h3>${lang === 'en' ? 'Opening Hours' : 'Godziny Pracy'}</h3>
-                            <div class="footer-column">
-                            <h3>${lang === 'en' ? 'Opening Hours' : 'Godziny Pracy'}</h3>
                             <div class="footer-line"></div>
                             <ul class="footer-hours">
                                 <li>${lang === 'en' ? 'Monday - Saturday' : 'Poniedziałek - Sobota'}: 7:00 – 22:00</li>
                                 <li>${lang === 'en' ? 'Sunday' : 'Niedziela'}: ${lang === 'en' ? 'Closed' : 'Nieczynne'}</li>
+                                <li>${lang === 'en' ? '' : ''}: ${lang === 'en' ? '' : ''}</li>
                             </ul>
                         </div>
                         <div class="footer-column">
@@ -155,7 +152,7 @@
         }
     }
 
-    // 6. OBSŁUGA PŁYWAJĄCEGO MENU (Sub-nav)
+    // 6. OBSŁUGA PŁYWAJĄCEGO MENU
     window.addEventListener('scroll', function() {
         const mainSubNav = document.querySelector('.sticky-sub-nav:not(.floating)');
         const floatingNav = document.querySelector('.sticky-sub-nav.floating');
@@ -168,6 +165,5 @@
             }
         }
     });
-
 
 })();
